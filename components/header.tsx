@@ -4,7 +4,7 @@ const navLinks = [
   { href: "#about", label: "ABOUT" },
   { href: "#portfolio", label: "PORTFOLIO" },
   { href: "#resume", label: "RESUME" },
-  { href: "#contact", label: "CONTACT" },
+  { href: "https://www.linkedin.com/in/bryanbergenholtz/", label: "CONTACT" },
 ];
 
 export default function Header() {
