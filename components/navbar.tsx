@@ -11,15 +11,16 @@ import {
 import { FileText, Download } from "lucide-react";
 
 const navLinks = [
-  { href: "#about", label: "ABOUT" },
-  { href: "#portfolio", label: "PORTFOLIO" },
-  { href: "#resume", label: "RESUME", dropdown: true }, // Marking it for a dropdown
+  { href: "#home", label: "HOME" },
+  { href: "#projects", label: "PROJECTS" },
+  { href: "#experience", label: "EXPERIENCE" },
+  { href: "#resume", label: "RESUME", dropdown: true },
   { href: "https://www.linkedin.com/in/bryanbergenholtz/", label: "CONTACT" },
 ];
 
 export default function NavigationBar() {
   return (
-    <header className="w-full h-screen bg-black flex items-center justify-center">
+    <header >
       <nav>
         <ul className="flex justify-center space-x-16 m-0 p-0 text-center">
           {navLinks.map(({ href, label, dropdown }) =>

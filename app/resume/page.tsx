@@ -1,8 +1,6 @@
 "use client";
 
 import Header from "@/components/navbar";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import Link from "next/link";
 
 export default function ResumePage() {
   return (
