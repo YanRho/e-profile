@@ -17,7 +17,7 @@ const navLinks = [
   { href: "https://www.linkedin.com/in/bryanbergenholtz/", label: "CONTACT" },
 ];
 
-export default function Header() {
+export default function NavigationBar() {
   return (
     <header className="w-full h-screen bg-black flex items-center justify-center">
       <nav>

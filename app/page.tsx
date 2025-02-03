@@ -1,10 +1,10 @@
-import Header from "@/components/header";
+import NavigationBar from "@/components/navbar";
 
 export default function Home() {
   return (
     <>
       <div className="h-screen text-white bg-black">
-        <Header />
+        <NavigationBar/>
       </div>
     </>
   );
