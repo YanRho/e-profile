@@ -12,32 +12,31 @@ const projects = [
     techStack: ["Next.js", "Tailwind", "Vercel"],
   },
   {
-      id: 2,
-      title: "DROCSID Communication Platform Web App",
-      description:
-        "A real-time communication platform MVP for Senior Project Class. It allows users to send and receive messages in real-time, similar to Discord.",
-      image: "/images/drocsid.png",
-      demoUrl: null,
-      githubUrl: "https://github.com/YanRho/8-bitbois",
-      techStack: ["Next.js", "Neon DB", "Tailwind"],
-    },
-    {
-      id: 3,
-      title: "Lung Cancer Prediction Analysis",
-      description:
-        "A data analysis project using Python and Pandas to predict lung cancer risk based on various health metrics. Lung Cancer Dataset from Kaggle.",
-        image: "/images/lungcancerbar.png",
-        demoUrl: null,
-        githubUrl: "https://github.com/YanRho/hw1-lung-cancer-prediction",
-        techStack: ["Python", "Pandas", "Matplotlib", 'Seaborn'],
-    
+    id: 2,
+    title: "DROCSID Communication Platform Web App",
+    description:
+      "A real-time communication platform MVP for Senior Project Class. It allows users to send and receive messages in real-time, similar to Discord.",
+    image: "/images/drocsid.png",
+    demoUrl: null,
+    githubUrl: "https://github.com/YanRho/8-bitbois",
+    techStack: ["Next.js", "Neon DB", "Tailwind"],
+  },
+  {
+    id: 3,
+    title: "Lung Cancer Prediction Data Analysis",
+    description:
+      "A data analysis project using Python and Pandas to predict lung cancer risk based on various health metrics. Lung Cancer Dataset from Kaggle.",
+    image: "/images/lungcancerbar.png",
+    demoUrl: null,
+    githubUrl: "https://github.com/YanRho/hw1-lung-cancer-prediction",
+    techStack: ["Python", "Pandas", "Matplotlib", "Seaborn"],
   },
 ];
 
 export default function Projects() {
   return (
     <div className="container mx-auto px-6 py-12">
-      <h1 className="text-4xl font-bold text-center mb-8">🚀 My Projects</h1>
+      <h1 className="text-4xl font-bold text-center mb-8">My Projects</h1>
 
       {/* Grid with auto-rows and gap adjustments */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
