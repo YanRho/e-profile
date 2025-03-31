@@ -3,6 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/components/navigation/navigation-bar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { redirect } from "next/navigation";
+
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +28,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body
@@ -35,7 +40,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NavigationBar />
+         
+         <NavigationBar />
           {children}
         </ThemeProvider>
       </body>

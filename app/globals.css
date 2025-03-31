@@ -70,3 +70,32 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+/* Custom Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+
+.hover:shadow-xl {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+
+.glow {
+  box-shadow: 0 0 20px #0c0a09;
+}

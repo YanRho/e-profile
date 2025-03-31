@@ -42,7 +42,7 @@ export default function NavigationBar() {
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
                       <a
-                        href="/bryan_resume.pdf"
+                        href="/BergenholtzResume.pdf"
                         download
                         className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-white"
                       >

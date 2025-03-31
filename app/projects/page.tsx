@@ -1,8 +1,112 @@
-export default function ProjectPage () {
-    return (
-        <div>
-            <h1>Project Page</h1>
-        </div>
-    );
+import Image from "next/image";
 
+const projects = [
+  {
+    id: 1,
+    title: "SRB Construction & Engineering Website",
+    description:
+      "A fully responsive business website built with Next.js and Tailwind CSS, showcasing SRB's services and portfolio.",
+    image: "/images/srbce.png",
+    demoUrl: "https://srbce.vercel.app/",
+    githubUrl: "https://github.com/bryanbergenholtz/srb-website",
+    techStack: ["Next.js", "Tailwind", "Vercel"],
+  },
+  {
+      id: 2,
+      title: "DROCSID Communication Platform Web App",
+      description:
+        "A real-time communication platform MVP for Senior Project Class. It allows users to send and receive messages in real-time, similar to Discord.",
+      image: "/images/drocsid.png",
+      demoUrl: null,
+      githubUrl: "https://github.com/YanRho/8-bitbois",
+      techStack: ["Next.js", "Neon DB", "Tailwind"],
+    },
+    {
+      id: 3,
+      title: "Lung Cancer Prediction Analysis",
+      description:
+        "A data analysis project using Python and Pandas to predict lung cancer risk based on various health metrics. Lung Cancer Dataset from Kaggle.",
+        image: "/images/lungcancerbar.png",
+        demoUrl: null,
+        githubUrl: "https://github.com/YanRho/hw1-lung-cancer-prediction",
+        techStack: ["Python", "Pandas", "Matplotlib", 'Seaborn'],
+    
+  },
+];
+
+export default function Projects() {
+  return (
+    <div className="container mx-auto px-6 py-12">
+      <h1 className="text-4xl font-bold text-center mb-8">🚀 My Projects</h1>
+
+      {/* Grid with auto-rows and gap adjustments */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className="flex flex-col h-full bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden"
+          >
+            {/* Project Image */}
+            <Image
+              src={project.image}
+              alt={project.title}
+              width={600}
+              height={400}
+              className="w-full h-48 object-cover"
+            />
+
+            {/* Content Section with flex-grow for consistent height */}
+            <div className="flex flex-col flex-grow p-6">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                {project.title}
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 mt-2 flex-grow">
+                {project.description}
+              </p>
+
+              {/* Tech Stack Badges */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {project.techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-lg"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Button Section for Demo and GitHub */}
+              <div className="flex items-center justify-between mt-6">
+                {/* Show Live Demo if deployed, otherwise show "Undeployed" */}
+                {project.demoUrl ? (
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-700"
+                  >
+                    🎯 Live Demo
+                  </a>
+                ) : (
+                  <span className="px-4 py-2 bg-gray-300 dark:bg-gray-700 text-black dark:text-white rounded-lg cursor-not-allowed">
+                    🌐 Undeployed
+                  </span>
+                )}
+                {/* GitHub Link Always Available */}
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700"
+                >
+                  🔗 GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
