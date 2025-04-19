@@ -3,9 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/components/navigation/navigation-bar";
 import { ThemeProvider } from "@/components/theme-provider";
-import { redirect } from "next/navigation";
 import UnderConstruction from "@/components/under-construction";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {MAINTENANCE_MODE ? (
           <UnderConstruction />
         ) : (
