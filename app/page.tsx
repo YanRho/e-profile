@@ -24,8 +24,7 @@ export default function Home() {
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
             I am graduating from California State University - Long Beach with a
             degree in Computer Science. I am a passionate software engineer with
-            a strong interest in web and app development, data science, and
-            analytics.
+            a strong interest in web/app development, and data.
           </p>
           <a
             href="/resume"
