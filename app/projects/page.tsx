@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
-// Real Projects Only
+// Project Data
 const realProjects = [
   {
     id: "real-1",
@@ -38,18 +38,33 @@ const realProjects = [
   },
 ];
 
+// Random color pool
+const bubbleColors = [
+  "#60A5FA", // blue
+  "#F472B6", // pink
+  "#34D399", // green
+  "#FBBF24", // yellow
+  "#A78BFA", // purple
+  "#F87171", // red
+  "#4ADE80", // emerald
+];
+
 export default function Projects() {
   const [selected, setSelected] = useState<string | null>(null);
 
   const getRandomMotion = () => {
-    const xMovement = Math.random() * 40 - 20; // Smaller float
-    const yMovement = Math.random() * 40 - 20;
-    const duration = 5 + Math.random() * 3; // 5-8s
+    const xMovement = Math.random() * 30 - 15;
+    const yMovement = Math.random() * 30 - 15;
+    const rotateAmount = Math.random() * 20 - 10;
+    const scaleAmount = 1 + Math.random() * 0.05;
+    const duration = 5 + Math.random() * 3;
 
     return {
       animate: {
         x: [0, xMovement, 0],
         y: [0, yMovement, 0],
+        rotate: [0, rotateAmount, 0],
+        scale: [1, scaleAmount, 1],
       },
       transition: {
         repeat: Infinity,
@@ -61,94 +76,136 @@ export default function Projects() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-white to-gray-100 dark:from-[#0c0a09] dark:to-gray-900 px-6 py-12 overflow-hidden">
+    <div className="w-full min-h-screen bg-gradient-to-br from-white to-gray-100 dark:from-[#0c0a09] dark:to-gray-900 px-6 py-12 overflow-hidden relative">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-12 text-black dark:text-white">
           My Projects
         </h1>
 
-        <motion.div
-          layout
-          className="flex flex-wrap justify-center gap-10 relative mx-auto max-w-4xl"
-        >
-          {realProjects.map((project) => {
-            const motionSettings = getRandomMotion();
+        <div className="relative mx-auto max-w-5xl">
+          {/* Expanded View */}
+          <AnimatePresence>
+            {selected && (
+              <>
+                {/* Background Blur */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="fixed inset-0 bg-black/30 backdrop-blur-md z-[40]"
+                  onClick={() => setSelected(null)}
+                />
 
-            return (
-              <motion.div
-                key={project.id}
-                layout
-                onClick={() =>
-                  setSelected(selected === project.id ? null : project.id)
-                }
-                className={`rounded-full overflow-hidden shadow-lg flex items-center justify-center
-                  ${
-                    selected
-                      ? selected === project.id
-                        ? "w-96 h-96 z-20" // Expanded big (24rem)
-                        : "w-24 h-24 opacity-70" // Smaller when another is selected
-                      : "w-40 h-40"
-                  }
-                  bg-white dark:bg-gray-800 cursor-pointer
-                  transition-all duration-500 ease-in-out`}
-                whileHover={{
-                  scale: selected === project.id ? 1 : 1.1,
-                }}
-                animate={motionSettings.animate}
-                transition={motionSettings.transition}
-              >
-                {selected === project.id ? (
-                  <div className="p-6 text-center flex flex-col items-center justify-center">
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                      {project.title}
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 justify-center mb-4">
-                      {project.techStack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-xs rounded-full text-black dark:text-white"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex gap-2">
-                      {project.demoUrl && (
-                        <a
-                          href={project.demoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-3 py-1 bg-black text-white rounded-full text-xs hover:bg-gray-700"
-                        >
-                          🎯 Live
-                        </a>
-                      )}
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-3 py-1 bg-gray-800 text-white rounded-full text-xs hover:bg-gray-700"
-                      >
-                        🔗 GitHub
-                      </a>
-                    </div>
-                  </div>
-                ) : (
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={150}
-                    height={150}
-                    className="object-cover w-full h-full"
-                  />
-                )}
-              </motion.div>
-            );
-          })}
-        </motion.div>
+                {/* Project Content */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="fixed inset-0 flex flex-col items-center justify-center p-8 bg-white dark:bg-gray-900 z-[50]"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {(() => {
+                    const project = realProjects.find((p) => p.id === selected);
+                    if (!project) return null;
+
+                    return (
+                      <>
+                        {/* Image and Close Button */}
+                        <div className="flex items-start justify-center gap-6 mb-8 flex-wrap">
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            className="rounded-lg object-contain"
+                            width={500}
+                            height={500}
+                          />
+
+                          {/* Close Button */}
+                          <button
+                            onClick={() => setSelected(null)}
+                            className="text-4xl font-bold text-black dark:text-white hover:text-gray-500 dark:hover:text-gray-400"
+                          >
+                            ×
+                          </button>
+                        </div>
+
+                        {/* Project Title */}
+                        <h2 className="text-4xl font-bold mb-4 text-black dark:text-white">
+                          {project.title}
+                        </h2>
+
+                        {/* Project Description */}
+                        <p className="text-lg mb-6 text-gray-700 dark:text-gray-300 max-w-2xl">
+                          {project.description}
+                        </p>
+
+                        {/* Tech Stack Badges */}
+                        <div className="flex flex-wrap gap-2 mb-8 justify-center">
+                          {project.techStack.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-3 py-1 bg-black text-white rounded-full text-xs dark:bg-white dark:text-black"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Buttons */}
+                        <div className="flex gap-4">
+                          {project.demoUrl && (
+                            <a
+                              href={project.demoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-5 py-2 bg-black text-white rounded-full hover:bg-gray-700"
+                            >
+                              🎯 Live
+                            </a>
+                          )}
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-5 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-600 dark:bg-white dark:text-black dark:hover:bg-gray-300"
+                          >
+                            🔗 GitHub
+                          </a>
+                        </div>
+                      </>
+                    );
+                  })()}
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
+
+          {/* Bubble List */}
+          <motion.div
+            layout
+            className="flex flex-wrap justify-center gap-6 relative z-[30]"
+          >
+            {realProjects.map((project, index) => {
+              const motionSettings = getRandomMotion();
+              const color = bubbleColors[index % bubbleColors.length];
+
+              return (
+                <motion.div
+                  key={project.id}
+                  onClick={() => setSelected(project.id)}
+                  className="w-36 h-36 rounded-full shadow-lg flex items-center justify-center cursor-pointer transition-all duration-500 ease-in-out"
+                  style={{ backgroundColor: color }}
+                  animate={motionSettings.animate}
+                  whileHover={{ scale: 1.1 }}
+                >
+                  {/* Optional: Could add initials here */}
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
       </div>
     </div>
   );
