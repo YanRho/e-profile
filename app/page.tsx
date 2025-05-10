@@ -25,8 +25,9 @@ export default function Home() {
           <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300">
             I am graduating from California State University - Long Beach with a
             degree in Computer Science. I am a passionate software engineer with
-            a strong interest in full-stack web/app development. Nice to meet
-            you! 
+            a strong interest in full-stack web/app development. Front end focus
+            and specialization. Exploring Backend development and Data
+            Analytics. Nice to meet you!
           </p>
           <a
             href="/resumes/BergenholtzResume.pdf"
