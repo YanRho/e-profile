@@ -48,9 +48,9 @@ export default function Projects() {
               <Image
                 src={project.image}
                 alt={project.title}
-                width={400}
-                height={300}
-                className="rounded-lg object-cover w-full h-60 group-hover:opacity-80 transition duration-300"
+                width={500}
+                height={350}
+                className="rounded-lg object-cover w-full h-72 group-hover:opacity-80 transition duration-300"
               />
             </div>
           ))}
@@ -73,7 +73,7 @@ export default function Projects() {
                 exit={{ scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white dark:bg-gray-900 rounded-xl shadow-xl p-6 max-w-5xl w-full flex flex-col md:flex-row items-center gap-6"
+                className="bg-white dark:bg-gray-900 rounded-xl shadow-xl p-8 max-w-6xl w-full flex flex-col md:flex-row items-center gap-8"
               >
                 {(() => {
                   const project = realProjects.find((p) => p.id === selected);
@@ -84,20 +84,20 @@ export default function Projects() {
                       <Image
                         src={project.image}
                         alt={project.title}
-                        width={500}
-                        height={400}
+                        width={640}
+                        height={480}
                         className="rounded-lg object-cover"
                       />
                       <div className="text-black dark:text-white">
-                        <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
-                        <p className="text-gray-700 dark:text-gray-300 mb-4 max-w-md">
+                        <h2 className="text-4xl font-bold mb-4">{project.title}</h2>
+                        <p className="text-gray-700 dark:text-gray-300 mb-4 max-w-xl text-lg">
                           {project.description}
                         </p>
-                        <div className="flex flex-wrap gap-2 mb-4">
+                        <div className="flex flex-wrap gap-3 mb-6">
                           {project.techStack.map((tech) => (
                             <span
                               key={tech}
-                              className="px-3 py-1 bg-black text-white rounded-full text-xs dark:bg-white dark:text-black"
+                              className="px-4 py-1 bg-black text-white rounded-full text-sm dark:bg-white dark:text-black"
                             >
                               {tech}
                             </span>
@@ -109,7 +109,7 @@ export default function Projects() {
                               href={project.demoUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-700"
+                              className="px-5 py-2 bg-black text-white rounded-full hover:bg-gray-700"
                             >
                               🎯 Live
                             </a>
@@ -118,7 +118,7 @@ export default function Projects() {
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-4 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-600 dark:bg-white dark:text-black dark:hover:bg-gray-300"
+                            className="px-5 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-600 dark:bg-white dark:text-black dark:hover:bg-gray-300"
                           >
                             🔗 GitHub
                           </a>
