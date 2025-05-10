@@ -9,7 +9,6 @@ const navLinks = [
   { href: "/", label: "HOME" },
   { href: "/projects", label: "PROJECTS" },
   { href: "/experience", label: "EXPERIENCE" },
-  { href: "/resume", label: "RESUME" },
   { href: "https://www.linkedin.com/in/bryanbergenholtz/", label: "CONTACT" },
 ];
 
