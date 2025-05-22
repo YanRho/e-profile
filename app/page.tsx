@@ -26,11 +26,9 @@ export default function Home() {
               Hey, I&apos;m Bryan! 👋
             </h1>
             <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300">
-              I am graduating from California State University - Long Beach with a
-              degree in Computer Science. I am a passionate software engineer with
-              a strong interest in full-stack web/app development. Front end focus
-              and specialization. Exploring Backend development and Data
-              Analytics. Nice to meet you!
+              I recently graduated from California State University - Long Beach with a B.S. in Computer Science. 
+              I'm a passionate software engineer with a strong interest in full-stack web/app development — specializing in frontend,
+               while actively exploring backend development and data analytics. Nice to meet you
             </p>
             <a
               href="/resumes/BergenholtzResume.pdf"
