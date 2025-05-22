@@ -27,7 +27,7 @@ export default function Home() {
             </h1>
             <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300">
               I recently graduated from California State University - Long Beach with a B.S. in Computer Science. 
-              I'm a passionate software engineer with a strong interest in full-stack web/app development — specializing in frontend,
+              I&apos; m a passionate software engineer with a strong interest in full-stack web/app development — specializing in frontend,
                while actively exploring backend development and data analytics. Nice to meet you
             </p>
             <a
