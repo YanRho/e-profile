@@ -1,19 +1,30 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { ModeToggle } from "../mode-toggle";
 
+
+// Navigation Links 
 const navLinks = [
-  { href: "/", label: "HOME" },
-  { href: "/projects", label: "PROJECTS" },
-  { href: "/experience", label: "EXPERIENCE" },
-  { href: "https://www.linkedin.com/in/bryanbergenholtz/", label: "CONTACT" },
+  { href: "#", label: "Home" },
+  {href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
 ];
+
 
 export default function NavigationBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setMenuOpen(false); // Close menu after navigation
+  };
 
   return (
     <header className="relative w-full h-16 bg-white dark:bg-[#0c0a09] text-black dark:text-white flex items-center justify-between px-4 sm:px-6 md:px-12 shadow-md z-50">
@@ -37,13 +48,14 @@ export default function NavigationBar() {
         <ul className="flex gap-6 md:gap-12 text-center">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
-              <Link
+              <a
                 href={href}
+                onClick={(e) => handleSmoothScroll(e, href)}
                 className="text-black dark:text-white uppercase tracking-widest text-xs sm:text-sm font-bold relative inline-block px-2 sm:px-4 py-2 group transition-colors duration-200"
               >
                 {label}
                 <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-black dark:bg-white group-hover:w-full transition-all duration-300 group-hover:left-0"></span>
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -62,18 +74,19 @@ export default function NavigationBar() {
       >
         <div className="flex flex-col items-center gap-4 py-6">
           {navLinks.map(({ href, label }) => (
-            <Link
+            <a
               key={href}
               href={href}
+              onClick={(e) => handleSmoothScroll(e, href)}
               className="text-black dark:text-white uppercase tracking-widest text-base font-bold relative group transition-all duration-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 px-6 py-2 rounded-md w-full text-center"
-              onClick={() => setMenuOpen(false)}
             >
               {label}
               <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-black dark:bg-white group-hover:w-full transition-all duration-300 group-hover:left-0"></span>
-            </Link>
+            </a>
           ))}
         </div>
       </div>
     </header>
-  );
+  )
+
 }

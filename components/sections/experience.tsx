@@ -1,4 +1,4 @@
-export default function ExperiencePage() {
+export default function Experience() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-gray-100 dark:from-[#0c0a09] dark:to-gray-900">
       <div className="text-center px-6">
