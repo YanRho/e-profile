@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bryan Rhoelle Bergenholtz",
+  title: "Bryan Bergenholtz | Software Dev",
   description: "My Portfolio",
 };
 
