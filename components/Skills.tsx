@@ -42,7 +42,7 @@ export default function Skills() {
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
             Modern technologies and frameworks that I have dabbed into, ranging from web development to graphics programming. 
-            Self taught and learned through my computer science degree.
+            Some are self taught and some are learned through my computer science degree.
           </p>
         </div>
 
