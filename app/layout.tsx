@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NavigationBar from "@/components/navigation/navigation-bar";
-import { ThemeProvider } from "@/components/theme-provider";
-import UnderConstruction from "@/components/under-construction";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,11 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bryan Bergenholtz",
-  description: "Online Portfolio",
+  title: "Bryan Bergenholtz | Software Dev",
+  description: "My Portfolio",
 };
-
-const MAINTENANCE_MODE = false; // Set to true to enable maintenance mode
 
 export default function RootLayout({
   children,
@@ -32,19 +27,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {MAINTENANCE_MODE ? (
-          <UnderConstruction />
-        ) : (
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <NavigationBar />
-            {children}
-          </ThemeProvider>
-        )}
+        {children}
       </body>
     </html>
   );
