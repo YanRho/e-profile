@@ -9,7 +9,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 text-center bg-[#09090b] text-white">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-6 text-center bg-[#09090b] text-white">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-bold mb-6">
           Hi, I'm{" "}
@@ -23,7 +23,7 @@ export default function Hero() {
         </h2>
 
         <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Exploring code, design, and everything in between.
+          Exploring code, design, and everything else.
         </p>
 
         {/* CTA Buttons */}

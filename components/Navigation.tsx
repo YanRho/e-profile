@@ -42,7 +42,7 @@ export default function Navigation() {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-xl font-bold bg-gradient-to-r from-[#442450] to-[#07a7a7] bg-clip-text text-transparent transition-all duration-300 "
+            className="text-xl font-bold bg-gradient-to-r from-[#442450] to-[#07a7a7] bg-clip-text text-transparent transition-all duration-300 cursor-pointer "
           >
             Bryan Rhoelle Bergenholtz
           </button>
