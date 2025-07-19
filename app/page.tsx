@@ -1,16 +1,16 @@
-
-
-import Hero from "@/components/sections/hero";
-import Projects from "@/components/sections/projects";
-import Experience from "@/components/sections/experience";
-
+import About from "@/components/About";
+import Hero from "@/components/Hero";
+import Navigation from "@/components/Navigation";
+import Skills from "@/components/Skills";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Projects />
-      <Experience />
+      <Navigation />
+      <Hero/>
+      <About/>
+      <Skills/>
     </>
   );
 }
