@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border/50 bg-[#0f0f11] text-white">
+    <footer className="border-t border-border/50 bg-[#09090b] text-white">
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
@@ -72,9 +72,6 @@ export default function Footer() {
         <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
             © {currentYear} Bryan Rhoelle Bergenholtz. All rights reserved.
-          </p>
-          <p className="flex items-center gap-1 text-gray-400 text-sm">
-            Built with <Heart size={14} className="text-red-500" /> 
           </p>
         </div>
       </div>

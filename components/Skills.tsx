@@ -19,7 +19,7 @@ export default function Skills() {
     {
       title: "Backend, Databases & Tools",
       skills: [
-        "Express", "PostgreSQL", "MongoDB",
+        "PostgreSQL", "MongoDB",
         "SQL", "Figma", "VsCode", "Jira", "Git"
       ]
     },
@@ -57,7 +57,7 @@ export default function Skills() {
                 hover:border-[#442450]
               "
             >
-              <h3 className="text-xl font-semibold mb-6 text-[#7e4692]">
+              <h3 className="text-xl font-semibold mb-6 text-[#07a7a7]">
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-3">

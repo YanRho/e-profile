@@ -2,8 +2,8 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-24 px-6"
-      style={{ backgroundColor: "#0f0f11" }}
+      className="py-24 px-6 bg-[#0f0f11] text-white"
+      
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
