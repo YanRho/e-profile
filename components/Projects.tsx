@@ -33,9 +33,9 @@ export default function Projects() {
       description:
         "A full-stack application enabling real-time messaging, designed for seamless communication and collaboration. Built with modern technologies, and offers features like text, voice, and video channels, real-time message handling, and customization options, all wrapped in a responsive intuitive design.",
       images: [
-        "/images/drocsid/RealTimeDirectMessaging.png",
-        "/images/drocsid/VideoAudioChat.png",
-        "/images/drocsid/Emojis.png"
+        "/images/drocsid/RealTimeDirectMessaging.webp",
+        "/images/drocsid/VideoAudioChat.webp",
+        "/images/drocsid/Emojis.webp"
       ],
       technologies: [
         "Next.js",
