@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-xl font-bold bg-gradient-to-r from-[#442450] to-[#07a7a7] bg-clip-text text-transparent mb-4">
-              Bryan Rhoelle Bergenholtz
+              Bryan Bergenholtz
             </h3>
             <p className="text-gray-400">
                 
@@ -48,7 +48,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-gray-400 hover:text-[#442450] smooth-transition"
               >
                 <Mail size={16} />
-                brbergenholtz.19@outlook.com
+                brbergenholtz.19@gmail.com
               </a>
               <div className="flex gap-4 mt-4">
                 <a
@@ -71,7 +71,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {currentYear} Bryan Rhoelle Bergenholtz. All rights reserved.
+            © {currentYear} Bryan Bergenholtz. All rights reserved.
           </p>
         </div>
       </div>

@@ -44,7 +44,7 @@ export default function Navigation() {
             onClick={() => scrollToSection("hero")}
             className="text-xl font-bold bg-gradient-to-r from-[#442450] to-[#07a7a7] bg-clip-text text-transparent transition-all duration-300 cursor-pointer "
           >
-            Bryan Rhoelle Bergenholtz
+            Bryan Bergenholtz
           </button>
 
           {/* Desktop Menu */}
@@ -65,7 +65,7 @@ export default function Navigation() {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden"
+            className="md:hidden bg-[#1a1a1a] text-white hover:bg-[#242424] rounded-lg transition"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -74,13 +74,13 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-border/50 bg-background/90 backdrop-blur-md">
+          <div className="md:hidden border-t border-border/50 bg-[#0e0e10]/90 backdrop-blur-md">
             <div className="py-4 space-y-2">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-4 py-2 text-white hover:text-[#442450] transition-colors duration-200"
+                  className="block w-full text-left px-4 py-2 text-white hover:text-[#07a7a7] transition-colors duration-200"
                 >
                   {item.label}
                 </button>
@@ -88,6 +88,7 @@ export default function Navigation() {
             </div>
           </div>
         )}
+
 
         </div>
     </nav>
