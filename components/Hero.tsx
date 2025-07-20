@@ -63,7 +63,7 @@ export default function Hero() {
             <Linkedin size={24} />
         </a>
         <a
-            href="mailto:brbergenholtz.19@outlook.com"
+            href="mailto:brbergenholtz.19@gmail.com"
             className="text-white hover:text-[#442450] transition-transform hover:scale-110"
         >
             <Mail size={24} />
