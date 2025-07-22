@@ -25,7 +25,7 @@ export default function Skills() {
     },
     {
       title: "Graphics & Systems",
-      skills: ["OpenGL", "GLSL", "Assimp", "GLFW", "Modern C++"]
+      skills: ["OpenGL", "GLSL", "Assimp", "GLFW", "Modern C++", "Linux"]
     }
     
   ];

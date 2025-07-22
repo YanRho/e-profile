@@ -8,6 +8,7 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -21,6 +22,14 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timeout);
+  }, []);
+
+
   const navItems = [
     { label: "Home", id: "hero" },
     { label: "About", id: "about" },
@@ -31,12 +40,15 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 smooth-transition ${
-        isScrolled
-          ? "bg-[#0e0e10]/90 backdrop-blur-md border-b border-border/50"
-          : "bg-transparent"
-      }`}
-    >
+        className={`fixed top-0 left-0 right-0 z-50 transition-opacity duration-1000 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        } smooth-transition ${
+          isScrolled
+            ? "bg-[#0e0e10]/90 backdrop-blur-md border-b border-border/50"
+            : "bg-transparent"
+        }`}
+      >
+
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
