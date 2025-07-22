@@ -150,7 +150,7 @@ export default function Contact() {
             <Card className="p-6 bg-gradient-to-br from-[#1a1a1a] to-[#121212] border border-[#222]">
               <h4 className="font-semibold mb-3 text-[#07a7a7]">Available for Work</h4>
               <p className="text-sm text-gray-400">
-                I'm currently open to full-time and freelance roles. Let's build something great!
+                I'm currently open to full-time roles. Let's build something great!
               </p>
             </Card>
           </div>
