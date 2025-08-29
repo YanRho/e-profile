@@ -41,16 +41,6 @@ export default function About() {
               coding, I found my interest in web and mobile application development, which led me to pursue
               and finish my computer science degree at the University of California, Long Beach.
             </p>
-            <p className="text-[#9ca3af] mb-4 leading-relaxed">
-              Ever since I was a teenager, I have been drawn to the visual arts, especially through photography and gaming.
-              Playing games with immersive worlds and intuitive mechanics sparked my interest in crafting responsive, engaging user experiences.
-              At the same time, photography has sharpened my design sense, teaching me how to create visually compelling interfaces that tell a story.
-              This passion for visual storytelling continues to influence my approach to UI/UX. I strive to blend creativity with interactivity — building experiences
-              that are not only functional, but also emotionally resonant and beautifully designed.
-            </p>
-            <p className="text-[#9ca3af] leading-relaxed">
-              When I am not coding, I am either behind the lens capturing moments or immersed in game worlds for design inspiration.
-            </p>
           </div>
         </div>
       </div>
