@@ -12,7 +12,7 @@ export default function Projects() {
     {
       title: "Alky Wallet [MVP]",
       description:
-        "A web-based budget/expense tracking application that helps users manage their finances effeciently. It features user authentication via NextAuth.js, secure data storage with PostgreSQL and Prisma ORM, and a sleek, responsive design using Tailwind CSS. Users can easily add, categorize, and visualize their expenses through interactive charts and graphs.",
+        "A full-stack web-based budget/expense tracking application that helps users manage their finances effeciently. It features user authentication via NextAuth.js, secure data storage with PostgreSQL and Prisma ORM, and a sleek, responsive design using Tailwind CSS. Users can easily add, categorize, and visualize their expenses through interactive charts and graphs.",
       images: [
         "/images/alkywallet/landing.webp",
         "/images/alkywallet/authCard.webp",
