@@ -16,7 +16,8 @@ export default function Projects() {
       images: [
         "/images/alkywallet/landing.webp",
         "/images/alkywallet/authCard.webp",
-        "/images/alkywallet/dashboard.webp"
+        "/images/alkywallet/dashboard.webp",
+        "/images/alkywallet/accounts.webp"
       ],
       technologies: [
         "Next.js", "TypeScript", "Node.js", "PostgreSQL",
