@@ -23,7 +23,7 @@ export default function Projects() {
         "Next.js", "TypeScript", "Node.js", "PostgreSQL",
         "Prisma", "Tailwind CSS", "NextAuth.js", 
       ],
-      liveUrl: "",
+      liveUrl: "https://alky-wallet.vercel.app/",
       githubUrl: "https://github.com/YanRho/alky-wallet"
     },
     {
