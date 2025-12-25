@@ -10,7 +10,7 @@ import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 export default function Projects() {
   const projects = [
     {
-      title: "Alky Wallet",
+      title: "Alky",
       description:
         "A full-stack web-based budget/expense tracking application that helps users manage their finances effeciently. It features user authentication via NextAuth.js, secure data storage with PostgreSQL and Prisma ORM, and a sleek, responsive design using Tailwind CSS. Users can easily add, categorize, and visualize their expenses through interactive charts and graphs.",
       images: [
@@ -23,7 +23,7 @@ export default function Projects() {
         "Next.js", "TypeScript", "Node.js", "PostgreSQL",
         "Prisma", "Tailwind CSS", "NextAuth.js", 
       ],
-      liveUrl: "https://alkywallet.vercel.app/",
+      liveUrl: "",
       githubUrl: "https://github.com/YanRho/alky-wallet"
     },
     {
